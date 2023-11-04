@@ -8,9 +8,19 @@ from requests import Session
 import json
 import time
 from django.contrib.auth.hashers import make_password, check_password
+import js2py
+# from temp import *
 
 hashed_pwd = make_password("plain_text")
 check_password("plain_text",hashed_pwd)
+
+# def transfer_ether(request):
+#     # eval_res, tempfile = js2py.run_file("./members/javascript.js") 
+#     # tempfile.transfer("0x74bbf4b2223496C4547c44268242A5196E3c6499","0x532600377959B703AA4AC2c468DeDe8FAA40B576",0.1)
+#     js2py.translate_file("javascript.js", "temp.py") 
+#     temp.transfer("0x74bbf4b2223496C4547c44268242A5196E3c6499","0x532600377959B703AA4AC2c468DeDe8FAA40B576",0.1)
+#     print("success")
+#     return HttpResponse("done")
 
 def form_view(request):
     return render(request,"form.html")
@@ -38,6 +48,7 @@ def clientRegister(request):
 def clientRegistered(request):
     client_username=request.POST['username']
     client_password=request.POST['password']
+    wallet_addr = request.POST['wallet_address']
     hashed_client_password=make_password(client_password)
     client_email=request.POST['email']
     client_confirm_password=request.POST['confirm_password']
@@ -56,7 +67,7 @@ def clientRegistered(request):
             "message":message
         }
         return render(request,'message.html',context)
-    user=Users(username=client_username, role='0',password=hashed_client_password,balance=10000,email=client_email)
+    user=Users(username=client_username, role='0',password=hashed_client_password,balance=10000,email=client_email, wallet_addr = wallet_addr)
     user.save()
     return HttpResponseRedirect(reverse('clientLogin'))
 
@@ -175,22 +186,36 @@ def auctionPortalItems(request):
     current_username=request.POST['username']
     current_time=int(time.time())
     for item in ItemsOnBid.objects.filter(valid=1):
-        item.time_left=200-current_time+item.initial_time
+        item.time_left=70-current_time+item.initial_time
         item.hours=int((item.time_left)/3600)
         item.minutes=(item.time_left)/60 -item.hours*60
         item.save()
         if item.time_left<=0:
+            # variable created
+            sender_address = Users.objects.get(username=item.highest_bidder_username).wallet_addr
+            receiver_address = Users.objects.get(username=item.owner_username).wallet_addr
+            amount = item.highest_bid
+
             owner=Users.objects.filter(username=item.owner_username)[0]
             item.owner_username=item.highest_bidder_username
             owner.balance=owner.balance+item.highest_bid
             item.save()
-            claimed_item=ItemsClaimed(item_name=item.item_name,item_descr=item.item_descr,item_picture=item.item_picture,owner_username=item.owner_username)
+            claimed_item=ItemsClaimed(item_name=item.item_name,item_descr=item.item_descr,item_picture=item.item_picture,owner_username=item.owner_username,highest_bidder_username=item.highest_bidder_username, highest_bid = item.highest_bid)
             claimed_item.save()
             user=Users.objects.filter(username=item.highest_bidder_username)[0]
             user.balance=user.balance-item.highest_bid
             owner.save()
             user.save()
             item.delete()
+
+            
+            context={
+                "senderAddress":sender_address,
+                "receiverAddress":receiver_address,
+                "amount":amount,
+            }
+            return render(request,'form.html',context)
+
     context={
     'items':items,
     'current_username':current_username

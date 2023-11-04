@@ -27,4 +27,5 @@ urlpatterns = [
     path('balanceUpdate/',views.balanceUpdate, name='balanceUpdate'),
     path('connect-wallet/', views.wallet_view, name='connect-wallet'),
     path('transfer-ethers/', views.form_view,name='transfer-ethers'),
+    # path('transfer/', views.transfer_ether,name='transfer'),
     ]
