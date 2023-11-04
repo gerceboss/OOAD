@@ -30,7 +30,7 @@
             {% csrf_token %}
             <p id="name" class="details">Username   : <b>   {{user.username}}</b></p>
             <p class="details">Email  :<b> {{user.email}}</b></p>
-            <p class="details">Balance  : <b>  {{user.balance}}</b></p>
+            {% comment %} <p class="details">Balance  : <b>  {{user.balance}}</b></p> {% endcomment %}
             <p class="details">Role   :   <b>  {{role}}</b></p>
         </form>
         <hr width="1px">

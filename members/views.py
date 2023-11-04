@@ -340,100 +340,100 @@ def myProfile(request):
         }
         return render(request,'myProfile.html',context)
 
-def crypto(request):
-    url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/category'
+# def crypto(request):
+#     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/category'
 
-    parameters = {
-    'id':"605e2ce9d41eae1066535f7c",
-    'start':'1',
-    'limit':'20',
-    'convert':'USD'
-    }
-    headers = {
-    'Accepts': 'application/json',
-    'X-CMC_PRO_API_KEY': '3a23a8ef-d582-4884-8ae5-7c8acaaf56a7',
-    }
+#     parameters = {
+#     'id':"605e2ce9d41eae1066535f7c",
+#     'start':'1',
+#     'limit':'20',
+#     'convert':'USD'
+#     }
+#     headers = {
+#     'Accepts': 'application/json',
+#     'X-CMC_PRO_API_KEY': '3a23a8ef-d582-4884-8ae5-7c8acaaf56a7',
+#     }
 
-    session = Session()
-    session.headers.update(headers)
+#     session = Session()
+#     session.headers.update(headers)
 
-    response = session.get(url, params=parameters)
-    json_data = json.loads(response.text)
-    with open("data_file.json", "w") as write_file:
-        json.dump(json_data, write_file, indent=4)
-    newdata=json_data['data']
-    Bitcoin=newdata['coins']
-    #Bitcoin
-    coinarray=Bitcoin[0]
-    quote=coinarray['quote']
-    USD=quote['USD']
-    price=USD['price']
-    #Ethereum
-    coinarray_2=Bitcoin[1]
-    quote_2=coinarray_2['quote']
-    USD_2=quote_2['USD']
-    price_2=USD_2['price']
-    #Maker
-    coinarray_4=Bitcoin[6]
-    quote_4=coinarray_4['quote']
-    USD_4=quote_4['USD']
-    price_4=USD_4['price']
+#     response = session.get(url, params=parameters)
+#     json_data = json.loads(response.text)
+#     with open("data_file.json", "w") as write_file:
+#         json.dump(json_data, write_file, indent=4)
+#     newdata=json_data['data']
+#     Bitcoin=newdata['coins']
+#     #Bitcoin
+#     coinarray=Bitcoin[0]
+#     quote=coinarray['quote']
+#     USD=quote['USD']
+#     price=USD['price']
+#     #Ethereum
+#     coinarray_2=Bitcoin[1]
+#     quote_2=coinarray_2['quote']
+#     USD_2=quote_2['USD']
+#     price_2=USD_2['price']
+#     #Maker
+#     coinarray_4=Bitcoin[6]
+#     quote_4=coinarray_4['quote']
+#     USD_4=quote_4['USD']
+#     price_4=USD_4['price']
     
-    template=loader.get_template('crypto.html')
-    # username=request.POST['username']
-    context={
-        "price_1":price,
-        "price_2":price_2,
-        # "username":username  
-    }
-    return HttpResponse(template.render(context,request))
+#     template=loader.get_template('crypto.html')
+#     # username=request.POST['username']
+#     context={
+#         "price_1":price,
+#         "price_2":price_2,
+#         # "username":username  
+#     }
+#     return HttpResponse(template.render(context,request))
 
-def crypto2(request):
-    url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/category'
+# def crypto2(request):
+#     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/category'
 
-    parameters = {
-    'id':"605e2ce9d41eae1066535f7c",
-    'start':'1',
-    'limit':'20',
-    'convert':'USD'
-    }
-    headers = {
-    'Accepts': 'application/json',
-    'X-CMC_PRO_API_KEY': '3a23a8ef-d582-4884-8ae5-7c8acaaf56a7',
-    }
+#     parameters = {
+#     'id':"605e2ce9d41eae1066535f7c",
+#     'start':'1',
+#     'limit':'20',
+#     'convert':'USD'
+#     }
+#     headers = {
+#     'Accepts': 'application/json',
+#     'X-CMC_PRO_API_KEY': '3a23a8ef-d582-4884-8ae5-7c8acaaf56a7',
+#     }
 
-    session = Session()
-    session.headers.update(headers)
+#     session = Session()
+#     session.headers.update(headers)
 
-    response = session.get(url, params=parameters)
-    json_data = json.loads(response.text)
-    with open("data_file.json", "w") as write_file:
-        json.dump(json_data, write_file, indent=4)
-    newdata=json_data['data']
-    Bitcoin=newdata['coins']
-    #Bitcoin
-    coinarray=Bitcoin[0]
-    quote=coinarray['quote']
-    USD=quote['USD']
-    price=USD['price']
-    #Ethereum
-    coinarray_2=Bitcoin[1]
-    quote_2=coinarray_2['quote']
-    USD_2=quote_2['USD']
-    price_2=USD_2['price']
-    #Maker
-    coinarray_4=Bitcoin[6]
-    quote_4=coinarray_4['quote']
-    USD_4=quote_4['USD']
-    price_4=USD_4['price']
+#     response = session.get(url, params=parameters)
+#     json_data = json.loads(response.text)
+#     with open("data_file.json", "w") as write_file:
+#         json.dump(json_data, write_file, indent=4)
+#     newdata=json_data['data']
+#     Bitcoin=newdata['coins']
+#     #Bitcoin
+#     coinarray=Bitcoin[0]
+#     quote=coinarray['quote']
+#     USD=quote['USD']
+#     price=USD['price']
+#     #Ethereum
+#     coinarray_2=Bitcoin[1]
+#     quote_2=coinarray_2['quote']
+#     USD_2=quote_2['USD']
+#     price_2=USD_2['price']
+#     #Maker
+#     coinarray_4=Bitcoin[6]
+#     quote_4=coinarray_4['quote']
+#     USD_4=quote_4['USD']
+#     price_4=USD_4['price']
     
-    template=loader.get_template('crypto.html')
-    username=request.POST['username']
-    context={
-        "price_1":price,
-        "price_2":price_2,
-        "username":username  
-    }
-    return HttpResponse(template.render(context,request))
+#     template=loader.get_template('crypto.html')
+#     username=request.POST['username']
+#     context={
+#         "price_1":price,
+#         "price_2":price_2,
+#         "username":username  
+#     }
+#     return HttpResponse(template.render(context,request))
 
     

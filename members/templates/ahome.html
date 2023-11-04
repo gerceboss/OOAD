@@ -42,9 +42,9 @@
                 <form action="../crypto2/" method="POST">
                     {%csrf_token%}
                     <input type="text" name="username" value= '{{ admin.username }}' style="display:none;">
-                    <Button>
+                    {% comment %} <Button>
                         <b> Cryptocurrency Convertor</b>
-                    </Button>
+                    </Button> {% endcomment %}
                 </form>
             </li>
                 <li>
