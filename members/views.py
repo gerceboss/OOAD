@@ -10,6 +10,7 @@ import time
 from django.contrib.auth.hashers import make_password, check_password
 import js2py
 # from temp import *
+from web3 import Web3
 
 hashed_pwd = make_password("plain_text")
 check_password("plain_text",hashed_pwd)
@@ -21,6 +22,8 @@ check_password("plain_text",hashed_pwd)
 #     temp.transfer("0x74bbf4b2223496C4547c44268242A5196E3c6499","0x532600377959B703AA4AC2c468DeDe8FAA40B576",0.1)
 #     print("success")
 #     return HttpResponse("done")
+infura_url = "https://sepolia.infura.io/v3/ba4a7cd723164ef58662195dfa699f99"
+web3 = Web3(Web3.HTTPProvider(infura_url))
 
 def form_view(request):
     return render(request,"form.html")
@@ -244,12 +247,17 @@ def itemAdded(request):
     return render(request,'message.html',context)
 
 def bidUpdate(request) :
+    
     current_item_bid=int(request.POST['bid'])
     current_item_id=request.POST['item_id']
     current_username=request.POST['username']
+    wallet_address = Users.objects.get(username=current_username).wallet_addr
+    balance_wei = web3.eth.get_balance(wallet_address)
+    balance_eth = web3.from_wei(balance_wei, 'ether')
+    print(wallet_address, balance_eth)
     item=ItemsOnBid.objects.get(id=current_item_id)
     saved_highest_bid=item.highest_bid
-    if(current_item_bid>saved_highest_bid) :
+    if(current_item_bid>saved_highest_bid and current_item_bid < balance_eth) :
         item.highest_bid=current_item_bid
         item.highest_bidder_username=current_username
         item.save() 
@@ -258,7 +266,10 @@ def bidUpdate(request) :
             "message":message
         }
         return render(request,'message.html',context)
-    message="BIT NOT ACCEPTED"
+    elif(current_item_bid<balance_eth):
+        message="BID NOT ACCEPTED! You don't have enough balance"
+    message="BID NOT ACCEPTED! Auction has ended"
+
     context={
         "message":message
     }

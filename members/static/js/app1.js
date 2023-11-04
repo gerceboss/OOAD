@@ -1,38 +1,3 @@
-// document.addEventListener("DOMContentLoaded", () => {
-// //transfer amount
-//     const Web3=require("web3");
-//     const transferForm = document.getElementById("transferForm");
-//     const transferButton = document.getElementById("transferButton");
-//     const resultMessage = document.getElementById("resultMessage");
-
-//     transferButton.addEventListener("click", async () => {
-//         const senderAddress = document.getElementById("senderAddress").value;
-//         const recipientAddress = document.getElementById("recipientAddress").value;
-//         const amount = parseFloat(document.getElementById("amount").value);
-
-//         // Initialize Web3.js and connect to an Ethereum node
-//         const web3 = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:7545"));
-
-//         // Send Ether from senderAddress to recipientAddress
-//         try {
-//             const gasPrice = await web3.eth.getGasPrice();
-//             const transactionObject = {
-//                 from: senderAddress,
-//                 to: recipientAddress,
-//                 value: web3.utils.toWei(amount.toString(), "ether"),
-//                 gasPrice: gasPrice,
-//             };
-//             console.log("hello");
-//             // Sign and send the transaction
-//             const transactionHash = await web3.eth.sendTransaction(transactionObject);
-
-//             resultMessage.textContent = `Transaction sent. Transaction hash: ${transactionHash}`;
-//         } catch (error) {
-//             resultMessage.textContent = `Error: ${error.message}`;
-//         }
-//     });
-// });
-
 document.addEventListener("DOMContentLoaded", () => {
   const transferForm = document.getElementById("transferForm");
   const transferButton = document.getElementById("transferButton");
@@ -44,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const myArray1 = senderText.innerHTML.split(":");
     const senderAddress = myArray1[1];
     console.log(senderAddress);
-    const recipientText = document.getElementById("senderAddress");
+    const recipientText = document.getElementById("recipientAddress");
     const myArray2 = recipientText.innerHTML.split(":");
     const recipientAddress = myArray2[1];
     console.log(recipientAddress);
