@@ -1,8 +1,13 @@
 body{
-  background-image: url("https://en.cryptonomist.ch/wp-content/uploads/2022/06/3ac-crypto-1140x600.jpg");
+  background-image: url("https://imageio.forbes.com/specials-images/imageserve/634ff020f35b6654fcb5c039/Abstract-blockchain-technology-concept--Internet-security--Isometric-digital-cube/0x0.jpg?format=jpg&crop=4127,2320,x0,y0,safe&width=1440");
   background-size: cover;
-  padding:0%;
+  padding: 0%;
   margin: 0%;
+  backdrop-filter: blur(4px);
+  height: 100%;
+}
+html {
+  height: 100%;
 }
 header{
 padding:20px;
@@ -23,10 +28,10 @@ padding:20px;
 }
 .heading{
   padding: 0vh 0vw 0vh 5vw;
-  margin:20vh 0 0 0;
+  margin:30vh 0 0 0;
   font-size: 80px;
-  color: #FCECB6;
-  font-family: 'Kanit', sans-serif;
+  color: #b6e0fc;
+  font-family: sans-serif;
 }
 
 
@@ -87,8 +92,8 @@ padding:20px;
 
 #buttonStart button{
   background-color: transparent;
-  color: #FCECB6;
-  border: 2px solid #FCECB6;
+  color: #b6e0fc;
+  border: 2px solid #b6e0fc;
   height: 10vh;
   width: 10vw;
   cursor:pointer;
@@ -98,7 +103,7 @@ padding:20px;
 
 #buttonStart button:hover{
   color:black;
-  background-color: #FCECB6;
+  background-color: #b6e0fc;
 }
 
 #ConFoot{
@@ -116,12 +121,15 @@ padding:20px;
 #sm{
   display: flex;
   flex-direction: column;
-  height: 10vh;
+  height: auto;
   background-color: black;
   text-align: center;
   color: aliceblue;
   padding: 15px 0 20px 0;
-  margin: 15vh 0px 0px 0px;
+  position: fixed;
+  bottom: 3%;
+  width: 100%;
+  align-items: center;
 }
 .contacts img{
   height:3em;

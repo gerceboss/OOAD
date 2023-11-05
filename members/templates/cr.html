@@ -14,18 +14,13 @@
 </head>
 <body>
     <div class="demo-wrap">
-        <img
-          class="demo-bg"
-          src="https://en.cryptonomist.ch/wp-content/uploads/2022/06/3ac-crypto-1140x600.jpg"
-          alt=""
-        >
         <div class="MainContainer">
     <h1 class="SigninText">Client register </h1>
-    <form class="InputContainer" action ="../clientRegistered/" method="post" style="padding-top: 100px">
+    <form class="InputContainer" action ="../clientRegistered/" method="post">
         {% csrf_token %}
-          <input type="text" id="rusername" name="username" class="input" placeholder="Enter Username"><br>
-          <input type="password" id="password" name="password" class="input" placeholder="Enter Password"><br>
-          <input type="password" id="password" name="confirm_password" class="input" placeholder="Confirm Password"><br>
+          <input type="text" id="rusername" name="username" class="input" placeholder="Enter Username">
+          <input type="password" id="password" name="password" class="input" placeholder="Enter Password">
+          <input type="password" id="password" name="confirm_password" class="input" placeholder="Confirm Password">
           <input type="text" id="email" name="email" class="input" placeholder="Enter Email">
           <input
             type="text"
@@ -39,7 +34,7 @@
             <button type="submit" value="REGISTER">Register</button>
         </div> 
       </form>
-      <p id="areyou">Already an Client? <a href="../clientLogin/"> Sign-In</a> </p> 
+      <p id="areyou">Already a Client? <a href="../clientLogin/"> Sign-In</a> </p> 
       </div>
       </div>
 </body>
