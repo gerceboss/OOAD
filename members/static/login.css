@@ -6,59 +6,62 @@
     box-sizing: border-box;
   }
   body {
-    /* background-image: url("https://en.cryptonomist.ch/wp-content/uploads/2022/06/3ac-crypto-1140x600.jpg"); */
+    background-image: url("https://imageio.forbes.com/specials-images/imageserve/634ff020f35b6654fcb5c039/Abstract-blockchain-technology-concept--Internet-security--Isometric-digital-cube/0x0.jpg?format=jpg&crop=4127,2320,x0,y0,safe&width=1440");
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100vw;
+    backdrop-filter: blur(5px);
   }
   .MainContainer{
-    display: flex;
+  display: flex;
   align-items: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
   height: 80vh;
-  width: 30vw;
+  width: 35vw;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 30px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(8.5px);
-  color: #FCECB6;
+  color: white;
   font-family: 'Kanit', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.3rem;
+  padding-bottom: 1rem;
   }
-  h1{
-    margin: 3rem 0 2rem 0;
-  }
-
   .InputContainer{
     display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 20%;
+  height: auto;
   width: 100%;
   }
 
+  h1{
+    margin-top: 5rem;
+  }
   .input{
     background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 8px 32px 0 rgba(255, 220, 144, 0.37);
+    box-shadow: 0 8px 32px 0 #b6e0fcc8;
     border-radius: 2rem;
     width: 80%;
     height: 3rem;
     padding: 1rem;
     border: none;
     outline: none;
-    color: #FCECB6;
+    color: #b6e0fc;
     font-size: 1rem;
     font-weight: bold;
-   
+    margin: 1rem;
   }
   input:focus {
     display: inline-block;
-    box-shadow: 0 0 0 0.2rem #FCECB6;
+    box-shadow: 0 0 0 0.2rem #b6e0fc;
     backdrop-filter: blur(12rem);
     border-radius: 2rem;
   }
@@ -76,7 +79,7 @@
   }
   button{
     /* background: linear-gradient(to right, maroon  0%, #FCECB6 79%); */
-    background: #FCECB6 ;
+    background: #b6e0fc;
 
   text-transform: uppercase;
   letter-spacing: 0.2rem;
@@ -90,9 +93,8 @@
 
   .register{
     width: 300px;
-    background-color: rgb(252, 236, 182,0.5);
+    background-color: #b6e0fc;
     border-radius: 30px;
-    margin: 100px 0px 20px 0px;
     padding: 4px 20px;
     width:fit-content
   }
@@ -117,13 +119,4 @@
     top: 0;
     width: 100%;
     height: auto;
-  }
-  #rusername{
-    margin-top: 150px;
-  }
-  #areyou{
-    margin-top: 250px;
-  }
-  #Adminme{
-    margin-top: 0;
   }

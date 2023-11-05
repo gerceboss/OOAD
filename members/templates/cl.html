@@ -22,9 +22,9 @@
 
     <div class="MainContainer">
         <h1 class="SigninText">Client Sign-in</h1>
-        <form class="InputContainer" action="../clientLoggedIn/" method = "post" style="padding-top: 100px;">
+        <form class="InputContainer" action="../clientLoggedIn/" method = "post">
             {% csrf_token %}
-                <input type="text" class="input" placeholder="Enter Username" name="username"><br>
+                <input type="text" class="input" placeholder="Enter Username" name="username">
                 <input type="password" class="input" placeholder="Enter Password" name="password">
           
             <div class="ButtonContainer" style="margin-top: 32px;">
