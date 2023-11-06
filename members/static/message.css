@@ -6,32 +6,35 @@
     box-sizing: border-box;
   }
   body {
-    /* background-image: url("https://en.cryptonomist.ch/wp-content/uploads/2022/06/3ac-crypto-1140x600.jpg"); */
+    background-image: url("https://imageio.forbes.com/specials-images/imageserve/634ff020f35b6654fcb5c039/Abstract-blockchain-technology-concept--Internet-security--Isometric-digital-cube/0x0.jpg?format=jpg&crop=4127,2320,x0,y0,safe&width=1440");
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100vw;
+    backdrop-filter: blur(4px);
   }
+  header{
+    padding:20px;
+    }
   .MainContainer{
     display: flex;
   align-items: center;
   text-align: center;
   flex-direction: column;
-  height: 80vh;
   width: 30vw;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 30px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(8.5px);
-  color: #FCECB6;
+  color: white;
   font-family: 'Kanit', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.3rem;
   }
   h1{
-    margin: 3rem 0 2rem 0;
+    margin: 2rem 0 2rem 0;
   }
 
   .InputContainer{
@@ -52,14 +55,14 @@
     padding: 1rem;
     border: none;
     outline: none;
-    color: #FCECB6;
+    color: white;
     font-size: 1rem;
     font-weight: bold;
    
   }
   input:focus {
     display: inline-block;
-    box-shadow: 0 0 0 0.2rem #FCECB6;
+    box-shadow: 0 0 0 0.2rem white;
     backdrop-filter: blur(12rem);
     border-radius: 2rem;
   }
@@ -77,17 +80,21 @@
   }
   button{
     /* background: linear-gradient(to right, maroon  0%, #FCECB6 79%); */
-    background: #FCECB6 ;
+    background: white ;
 
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  width: 65%;
+  width: auto;
   height: 3rem;
   border: none;
   color: black;
   border-radius: 2rem;
   cursor: pointer;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   }
+
 
   .register{
     width: 300px;

@@ -30,13 +30,7 @@
                     </form>
                 </li>
             <li>
-                <form action="../crypto2/" method="POST">
-                    {%csrf_token%}
-                    <input type="text" name="username" value= '{{ client.username }}' style="display:none;">
-                    {% comment %} <Button>
-                        <b> Cryptocurrency Convertor</b>
-                    </Button> {% endcomment %}
-                </form>
+               
             </li>
                 <li>
                 <a href="/members/">Logout</a>
@@ -47,20 +41,20 @@
       </header>
         <div class='heading'>
             <p class='heading'>
-                AUCTOPUS
+                BLOCKAID
             </p>
         </div>
         <div class='homey'>
             <div className="homecontent">
                 <h1>An online web port that helps you make fair trades ! Exploring currencies and making transactions directly through them is now easier</h1> 
             </div>
-            <div class="homeimg">
+            {% comment %} <div class="homeimg">
                 <img
                 width='60%'
                 height='200'
-                src='https://i.imgur.com/wztG4ZO.png'
+                src='..'
                 alt='why man why?'/>
-            </div>
+            </div> {% endcomment %}
         </div>
         <div id="buttonStart">
             <form action="../auctionPortalItems/" method="POST">

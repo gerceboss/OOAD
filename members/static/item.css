@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+html{
+  height: 100%;
+}
 
 * {
     margin: 0;
@@ -6,30 +9,33 @@
     box-sizing: border-box;
   }
   body {
-    /* background-image: url("https://en.cryptonomist.ch/wp-content/uploads/2022/06/3ac-crypto-1140x600.jpg"); */
+    background-image: url("https://imageio.forbes.com/specials-images/imageserve/634ff020f35b6654fcb5c039/Abstract-blockchain-technology-concept--Internet-security--Isometric-digital-cube/0x0.jpg?format=jpg&crop=4127,2320,x0,y0,safe&width=1440");
     background-size: cover;
+    padding: 0%;
+    margin: 0%;
+    backdrop-filter: blur(4px);
+    height: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
+    justify-content: center;
   }
   .MainContainer{
     display: flex;
   align-items: center;
   flex-direction: column;
-  height: 80vh;
+  height: 85vh;
   width: 30vw;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 30px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(8.5px);
-  color: #FCECB6;
+  color: #b6e0fc;
   font-family: 'Kanit', sans-serif;
   letter-spacing: 0.3rem;
   }
   h1{
-    margin: 3rem 0 2rem 0;
+    margin: 3rem 0 3.5rem 0;
   }
 
   .InputContainer{
@@ -43,14 +49,14 @@
 
   .input{
     background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 8px 32px 0 rgba(255, 220, 144, 0.37);
+    box-shadow: 0 8px 32px 0 #b6e0fc;
     border-radius: 2rem;
     width: 80%;
     height: 3rem;
     padding: 1rem;
     border: none;
     outline: none;
-    color: #FCECB6;
+    color: #b6e0fc;
     font-size: 1rem;
     font-weight: bold;
     margin-bottom: 30px;
@@ -58,13 +64,13 @@
   }
   input:focus {
     display: inline-block;
-    box-shadow: 0 0 0 0.2rem #FCECB6;
+    box-shadow: 0 0 0 0.2rem #b6e0fc;
     backdrop-filter: blur(12rem);
     border-radius: 2rem;
    
   }
   input::placeholder {
-    color: #d3d3d3;
+    color: white;
     font-weight: 100;
     font-size: 1rem;
   }
@@ -77,7 +83,7 @@
   }
   button{
     /* background: linear-gradient(to right, maroon  0%, #FCECB6 79%); */
-    background: #FCECB6 ;
+    background: #b6e0fc ;
 
   text-transform: uppercase;
   letter-spacing: 0.2rem;

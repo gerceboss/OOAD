@@ -1,6 +1,12 @@
 body{
-    background-image: url("https://i.imgur.com/mjVFNa4.jpg");
+    background-image: url("https://imageio.forbes.com/specials-images/imageserve/634ff020f35b6654fcb5c039/Abstract-blockchain-technology-concept--Internet-security--Isometric-digital-cube/0x0.jpg?format=jpg&crop=4127,2320,x0,y0,safe&width=1440");
     background-size: cover;
+    backdrop-filter: blur(4px);
+    height: 100%;
+    margin: 0px;
+  }
+  html{
+    height: 100%;
   }
   header{
   padding:20px;
