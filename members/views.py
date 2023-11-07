@@ -8,20 +8,14 @@ from requests import Session
 import json
 import time
 from django.contrib.auth.hashers import make_password, check_password
-import js2py
-# from temp import *
 from web3 import Web3
 
 hashed_pwd = make_password("plain_text")
 check_password("plain_text",hashed_pwd)
 
-# def transfer_ether(request):
-#     # eval_res, tempfile = js2py.run_file("./members/javascript.js") 
-#     # tempfile.transfer("0x74bbf4b2223496C4547c44268242A5196E3c6499","0x532600377959B703AA4AC2c468DeDe8FAA40B576",0.1)
-#     js2py.translate_file("javascript.js", "temp.py") 
-#     temp.transfer("0x74bbf4b2223496C4547c44268242A5196E3c6499","0x532600377959B703AA4AC2c468DeDe8FAA40B576",0.1)
-#     print("success")
-#     return HttpResponse("done")
+contract_address = "0x6D892cD478BeE23f8dD91F10479b40bE9f4C9b7a"
+abi = json.loads('[{"inputs":[{"internalType":"address","name":"_address","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[{"internalType":"address","name":"_from","type":"address"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"checkWalletBalance","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_to","type":"address"},{"internalType":"uint256","name":"_amount","type":"uint256"}],"name":"makePayment","outputs":[],"stateMutability":"payable","type":"function"}]')
+
 infura_url = "https://sepolia.infura.io/v3/ba4a7cd723164ef58662195dfa699f99"
 web3 = Web3(Web3.HTTPProvider(infura_url))
 
@@ -283,12 +277,7 @@ def bidRequest(request) :
     }
     return render(request,'requests.html',context)
 
-# def bidAccept(request) :
-#     current_item_id=request.POST['item_id']
-#     item=ItemsOnBid.objects.get(id=current_item_id)
-#     item.valid=1
-#     item.save()
-#     return HttpResponse("Item Accepetd")
+
 
 def bidAccept(request) :
     current_item_id=request.POST['item_id']
@@ -341,100 +330,6 @@ def myProfile(request):
         }
         return render(request,'myProfile.html',context)
 
-# def crypto(request):
-#     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/category'
 
-#     parameters = {
-#     'id':"605e2ce9d41eae1066535f7c",
-#     'start':'1',
-#     'limit':'20',
-#     'convert':'USD'
-#     }
-#     headers = {
-#     'Accepts': 'application/json',
-#     'X-CMC_PRO_API_KEY': '3a23a8ef-d582-4884-8ae5-7c8acaaf56a7',
-#     }
-
-#     session = Session()
-#     session.headers.update(headers)
-
-#     response = session.get(url, params=parameters)
-#     json_data = json.loads(response.text)
-#     with open("data_file.json", "w") as write_file:
-#         json.dump(json_data, write_file, indent=4)
-#     newdata=json_data['data']
-#     Bitcoin=newdata['coins']
-#     #Bitcoin
-#     coinarray=Bitcoin[0]
-#     quote=coinarray['quote']
-#     USD=quote['USD']
-#     price=USD['price']
-#     #Ethereum
-#     coinarray_2=Bitcoin[1]
-#     quote_2=coinarray_2['quote']
-#     USD_2=quote_2['USD']
-#     price_2=USD_2['price']
-#     #Maker
-#     coinarray_4=Bitcoin[6]
-#     quote_4=coinarray_4['quote']
-#     USD_4=quote_4['USD']
-#     price_4=USD_4['price']
-    
-#     template=loader.get_template('crypto.html')
-#     # username=request.POST['username']
-#     context={
-#         "price_1":price,
-#         "price_2":price_2,
-#         # "username":username  
-#     }
-#     return HttpResponse(template.render(context,request))
-
-# def crypto2(request):
-#     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/category'
-
-#     parameters = {
-#     'id':"605e2ce9d41eae1066535f7c",
-#     'start':'1',
-#     'limit':'20',
-#     'convert':'USD'
-#     }
-#     headers = {
-#     'Accepts': 'application/json',
-#     'X-CMC_PRO_API_KEY': '3a23a8ef-d582-4884-8ae5-7c8acaaf56a7',
-#     }
-
-#     session = Session()
-#     session.headers.update(headers)
-
-#     response = session.get(url, params=parameters)
-#     json_data = json.loads(response.text)
-#     with open("data_file.json", "w") as write_file:
-#         json.dump(json_data, write_file, indent=4)
-#     newdata=json_data['data']
-#     Bitcoin=newdata['coins']
-#     #Bitcoin
-#     coinarray=Bitcoin[0]
-#     quote=coinarray['quote']
-#     USD=quote['USD']
-#     price=USD['price']
-#     #Ethereum
-#     coinarray_2=Bitcoin[1]
-#     quote_2=coinarray_2['quote']
-#     USD_2=quote_2['USD']
-#     price_2=USD_2['price']
-#     #Maker
-#     coinarray_4=Bitcoin[6]
-#     quote_4=coinarray_4['quote']
-#     USD_4=quote_4['USD']
-#     price_4=USD_4['price']
-    
-#     template=loader.get_template('crypto.html')
-#     username=request.POST['username']
-#     context={
-#         "price_1":price,
-#         "price_2":price_2,
-#         "username":username  
-#     }
-#     return HttpResponse(template.render(context,request))
 
     

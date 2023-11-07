@@ -19,13 +19,10 @@ urlpatterns = [
     path('bidRequest/',views.bidRequest, name='bidRequest'),
     path('bidAccept/',views.bidAccept, name='bidAccept'),
     path('bidReject/',views.bidReject, name='bidReject'),
-    # path('crypto/',views.crypto, name="crypto"),
-    # path('crypto2/',views.crypto2, name="crypto2"),
     path('about/',views.first, name="first"),
     path('addItem/',views.addItem, name="addItem"),
     path('myProfile/',views.myProfile, name='myProfile'),
     path('balanceUpdate/',views.balanceUpdate, name='balanceUpdate'),
     path('connect-wallet/', views.wallet_view, name='connect-wallet'),
     path('transfer-ethers/', views.form_view,name='transfer-ethers'),
-    # path('transfer/', views.transfer_ether,name='transfer'),
     ]
