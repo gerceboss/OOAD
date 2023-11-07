@@ -7,6 +7,7 @@ from .models import Users,ItemsOnBid, ItemsClaimed
 from requests import Session
 import json
 import time
+import re
 from django.contrib.auth.hashers import make_password, check_password
 from web3 import Web3
 
@@ -60,6 +61,14 @@ def clientRegistered(request):
 
     if(client_confirm_password!=client_password):
         message="PASSWORDS DO NOT MATCH"
+        context={
+            "message":message
+        }
+        return render(request,'message.html',context)
+    metamask_address_pattern = re.compile(r'^0x[a-fA-F0-9]{40}$')
+    chk = bool(metamask_address_pattern.match(wallet_addr))
+    if chk==False:
+        message="WALLET ADDRESS INVALID"
         context={
             "message":message
         }
