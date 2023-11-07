@@ -15,6 +15,10 @@ Before you can run this project, make sure you have the following software insta
 
 - [Python 3.x](https://www.python.org/downloads/)
 
+Before you can run this project, make sure you have a metamask wallet in your browser where you open this site:
+
+- [Metamask](https://metamask.io/download/)
+
 ### Setting up a Virtual Environment
 
 #### For macOS
@@ -59,13 +63,11 @@ On Windows, you can use the following command:
 py -m pip install -r requirements.txt
 ```
 
-## Usage
-
-Explain how to use your project and any additional setup or configuration that may be required.
-
-
-## Contact
-
-If you have any questions or need assistance, feel free to contact atrishijha@gmail.com.
+## Contributors
+Nilav Prajapati - 22114070, prajapati_na@cs.iitr.ac.in
+Preeti Karnwal - 22114071, preeti_k@cs.iitr.ac.in
+Siya Arora - 22114093, siya_a@cs.iitr.ac.in 
+Radhika Maheshwari - 22114075, radhika_m@cs.iitr.ac.in 
+Atrishi Jha - 22114014, atrishi_j@cs.iitr.ac.in  
 
 
