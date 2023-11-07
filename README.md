@@ -64,10 +64,18 @@ py -m pip install -r requirements.txt
 ```
 
 ## Contributors
-Nilav Prajapati - 22114070, prajapati_na@cs.iitr.ac.in
-Preeti Karnwal - 22114071, preeti_k@cs.iitr.ac.in
-Siya Arora - 22114093, siya_a@cs.iitr.ac.in 
-Radhika Maheshwari - 22114075, radhika_m@cs.iitr.ac.in 
-Atrishi Jha - 22114014, atrishi_j@cs.iitr.ac.in  
+1. Nilav Prajapati - 22114070, prajapati_na@cs.iitr.ac.in
+&nbsp;
+
+2. Preeti Karnwal - 22114071, preeti_k@cs.iitr.ac.in
+&nbsp;
+
+3. Siya Arora - 22114093, siya_a@cs.iitr.ac.in
+&nbsp;
+
+4. Radhika Maheshwari - 22114075, radhika_m@cs.iitr.ac.in
+&nbsp;
+
+5. Atrishi Jha - 22114014, atrishi_j@cs.iitr.ac.in  
 
 
