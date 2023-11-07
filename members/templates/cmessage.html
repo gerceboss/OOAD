@@ -22,9 +22,6 @@
         <form action="../" method="POST">
             {%csrf_token%}
             <input type="text" name="username" value= '{{ client.username }}' style="display:none;">
-            <Button>
-                <b>Back To Home</b>
-            </Button>
         </form>     
         {% comment %} here add the routing to go back to home {% endcomment %}
         </div>
