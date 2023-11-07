@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const transactionHash = await web3.eth.sendTransaction(transaction);
 
-      resultMessage.textContent = `Transaction sent. Transaction hash: ${transactionHash}`;
+      resultMessage.textContent = `Transaction sent! Payment successful`;
     } catch (error) {
       resultMessage.textContent = `Error: ${error.message}`;
     }

@@ -266,9 +266,10 @@ def bidUpdate(request) :
             "message":message
         }
         return render(request,'message.html',context)
-    elif(current_item_bid<balance_eth):
+    elif(current_item_bid>=balance_eth):
         message="BID NOT ACCEPTED! You don't have enough balance"
-    message="BID NOT ACCEPTED! Auction has ended"
+    else:
+        message="BID NOT ACCEPTED! Auction has ended"
 
     context={
         "message":message
